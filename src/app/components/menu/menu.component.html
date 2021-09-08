@@ -1,0 +1,10 @@
+<button mat-button [title]="'Ir a Inicio'" routerLink="/" style="font-size: 1rem;">Inicio</button>
+<button mat-button mat-flat-button color="primary" *ngIf="!isLogin" [title]="'Ir a registro'" routerLink="/registro"
+  style="font-size: 1rem;">Registrarse</button>
+<button mat-button *ngIf="!isLogin" [title]="'Ir a login'" routerLink="/ingresar"
+  style="font-size: 1rem;">Ingresar</button>
+<button mat-button *ngIf="isLogin" [matMenuTriggerFor]="menu" style="font-size: 1rem;">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/">Ver productos</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>

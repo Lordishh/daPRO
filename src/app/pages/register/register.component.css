@@ -1,0 +1,29 @@
+.error {
+  background-color: red;
+}
+
+.warning {
+  background-color: yellow;
+}
+
+.content-register {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.register-img {
+  width: 100%;
+  max-width: 330px;
+  text-align: center;
+}
+
+.ancho {
+  width: 80%;
+}
+
+.button {
+  height: 50px;
+}
