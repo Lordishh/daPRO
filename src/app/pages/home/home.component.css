@@ -9,3 +9,19 @@
 .neutro {
   background-color: gray;
 }
+
+h1 {
+  padding: 50px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+.title {
+  margin-top: 40px;
+  text-align: center;
+  color: #131313;
+  background-color: #e7e5e4;
+  letter-spacing: 0.15em;
+  text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474;
+}

@@ -6,10 +6,12 @@
     <mat-card-subtitle class="title-card">{{data.price | currency:'ARS ' | iva}}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="{{data.thumbnail}}" alt="No se encontró la imagen">
-  <mat-card-subtitle *ngIf="data.available_quantity">Stock: {{data.available_quantity}}
+  <mat-card-subtitle *ngIf="data.available_quantity" style="text-align: center;">Stock: {{data.available_quantity}}
   </mat-card-subtitle>
   <mat-card-actions *ngIf="verDetalle">
-    <button mat-flat-button color="primary" routerLink="/productos/{{data.id}}">Ver Detalles</button>
-    <button *ngIf="isLogin" mat-flat-button color="primary">Comprar</button>
+    <div class="btn">
+      <button class="btn1" mat-flat-button color="primary" routerLink="/productos/{{data.id}}">Ver Detalles</button>
+      <button class="btn2" *ngIf="isLogin" mat-flat-button color="primary">Comprar</button>
+    </div>
   </mat-card-actions>
 </mat-card>

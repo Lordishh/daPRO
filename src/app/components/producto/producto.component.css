@@ -14,3 +14,16 @@
   background-size: cover;
   /* background-color: lightcoral; */
 }
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn1 {
+  margin-right: px;
+}
+
+.btn2 {
+  margin-left: 10px;
+}
