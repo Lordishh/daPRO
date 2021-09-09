@@ -6,5 +6,6 @@
 <button mat-button *ngIf="isLogin" [matMenuTriggerFor]="menu" style="font-size: 1rem;">Menu</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item routerLink="/">Ver productos</button>
-  <button mat-menu-item>Item 2</button>
+  <button mat-menu-item routerLink="/usuarios">Usuarios</button>
+  <button mat-menu-item routerLink="/reportes">Reportes</button>
 </mat-menu>

@@ -1,6 +1,16 @@
 .example-card {
+  max-width: 400px;
   margin: auto;
   width: 32%;
   display: block;
   margin-top: 2rem;
+  border-radius: 50px;
+  background-color: rgb(151, 179, 189);
+  box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+  /* background-color: lightcoral; */
 }

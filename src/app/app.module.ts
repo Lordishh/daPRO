@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ProductoComponent } from './components/producto/producto.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     IvaPipe,
     ProductoComponent,
     NavbarComponent,
+    UsuariosComponent,
+    ReportesComponent,
   ],
   imports: [
     BrowserModule,

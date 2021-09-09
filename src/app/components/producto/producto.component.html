@@ -2,8 +2,8 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <!-- {{data | json}} -->
-    <mat-card-title>{{data.title}}</mat-card-title>
-    <mat-card-subtitle>{{data.price | currency:'ARS ' | iva}}</mat-card-subtitle>
+    <mat-card-title class="title-card">{{data.title}}</mat-card-title>
+    <mat-card-subtitle class="title-card">{{data.price | currency:'ARS ' | iva}}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="{{data.thumbnail}}" alt="No se encontró la imagen">
   <mat-card-subtitle *ngIf="data.available_quantity">Stock: {{data.available_quantity}}
