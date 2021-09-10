@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { UsuariolistService } from 'src/app/services/usuariolist.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -10,44 +11,7 @@ import { Usuario } from 'src/app/interfaces/usuario';
   styleUrls: ['./usuarios.component.css'],
 })
 export class UsuariosComponent implements OnInit {
-  listUsuarios: Usuario[] = [
-    {
-      usuario: 'pepe',
-      nombre: 'Pepito',
-      apellido: 'Pepon',
-      genero: 'Masculino',
-    },
-    {
-      usuario: 'fvictori',
-      nombre: 'Fabian',
-      apellido: 'Victori',
-      genero: 'Masculino',
-    },
-    {
-      usuario: 'paloma',
-      nombre: 'Paloma',
-      apellido: 'Geré',
-      genero: 'Femenino',
-    },
-    {
-      usuario: 'smartinez',
-      nombre: 'Sandra',
-      apellido: 'Martinez',
-      genero: 'Femenino',
-    },
-    {
-      usuario: 'mfer',
-      nombre: 'Mauro',
-      apellido: 'Fernandez',
-      genero: 'Masculino',
-    },
-    {
-      usuario: 'lordz',
-      nombre: 'Lautaro',
-      apellido: 'Conrrado',
-      genero: 'Masculino',
-    },
-  ];
+  listUsuarios: Usuario[] = [];
 
   displayedColumns: string[] = [
     'usuario',
@@ -57,19 +21,26 @@ export class UsuariosComponent implements OnInit {
     'acciones',
   ];
 
-  dataSource = new MatTableDataSource(this.listUsuarios);
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private _usuariolistService: UsuariolistService) {}
+
+  cargarUsuarios() {
+    this.listUsuarios = this._usuariolistService.getUsuario();
+    this.dataSource = new MatTableDataSource(this.listUsuarios);
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cargarUsuarios();
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
